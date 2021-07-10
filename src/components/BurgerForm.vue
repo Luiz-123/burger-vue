@@ -163,7 +163,11 @@ import Message from './Message.vue'
         cursor: pointer;
         transition: .2s;               
     }
-    .submit-btn:hover {                      
+    .submit-btn:hover {  
+        background-color: rgb(240, 172, 84);         
+        color: #222;
+        font-weight: bold;
+        border: 2px solid #222;                     
         opacity: 90%;
         transform: translateY(-2px);
         transition: .2s;
