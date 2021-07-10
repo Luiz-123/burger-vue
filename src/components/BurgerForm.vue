@@ -168,8 +168,8 @@ import Message from './Message.vue'
         color: #222;
         font-weight: bold;
         border: 2px solid #222;                     
-        opacity: 85%;
-        /*transform: translateY(-2px);*/
+        /*opacity: 90%;*/
+        transform: translateY(-2px);
         transition: .2s;
     }
 </style> 
