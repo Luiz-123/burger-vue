@@ -41,13 +41,13 @@
     }
 
     #nav a {
-        color: rgb(8, 68, 40);
+        color: rgb(56, 33, 2);
         text-decoration: none;
         margin: 12px;
         transition: .5s;
     }
 
     #nav a:hover {
-        color: rgb(173, 35, 35);
+        color: rgb(139, 82, 8); /*rgb(173, 35, 35);*/
     }
 </style>

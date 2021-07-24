@@ -21,7 +21,7 @@ import Dashboard from '../components/Dashboard.vue'
       position: relative;                 
       /* adicionando imagem de fundo */
       background-color: #000;
-      background-image: url('/img/banner_pedido.jpg');
+      background-image: url('/img/banner_pedido2.jpg');
       background-size: cover;
       display: flex;  
       min-height: 100vh;

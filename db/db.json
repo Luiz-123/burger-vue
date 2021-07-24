@@ -74,7 +74,7 @@
     },
     {
       "id": 2,
-      "tipo": "Em produção"
+      "tipo": "Produção"
     },
     {
       "id": 3,
@@ -102,7 +102,7 @@
         "Salame",
         "Cebola roxa"
       ],
-      "status": "Solicitado",
+      "status": "Finalizado",
       "id": 4
     },
     {
@@ -113,7 +113,7 @@
         "Tomate",
         "Pepino"
       ],
-      "status": "Solicitado",
+      "status": "Produção",
       "id": 5
     },
     {
@@ -125,7 +125,7 @@
         "Cebola roxa",
         "Pepino"
       ],
-      "status": "Solicitado",
+      "status": "Produção",
       "id": 6
     },
     {
@@ -136,19 +136,8 @@
         "Tomate",
         "Cebola roxa"
       ],
-      "status": "Solicitado",
+      "status": "Produção",
       "id": 7
-    },
-    {
-      "nome": "clara",
-      "carne": "Veggie burger",
-      "pao": "3 Queijos",
-      "opcionais": [
-        "Tomate",
-        "Pepino"
-      ],
-      "status": "Solicitado",
-      "id": 8
     },
     {
       "nome": "dani",
@@ -173,48 +162,26 @@
       "id": 10
     },
     {
-      "nome": "alex",
-      "carne": "Picanha",
-      "pao": "Parmesão e Orégano",
+      "nome": "Silva",
+      "carne": "Maminha",
+      "pao": "Italiano Branco",
       "opcionais": [
-        "Cheddar",
-        "Pepino"
+        "Cebola roxa",
+        "Tomate"
       ],
       "status": "Solicitado",
       "id": 11
     },
     {
-      "nome": "silva",
-      "carne": "Maminha",
+      "nome": "Dani",
+      "carne": "Veggie burger",
       "pao": "Integral",
       "opcionais": [
-        "Tomate",
-        "Bacon"
+        "Pepino",
+        "Tomate"
       ],
       "status": "Solicitado",
       "id": 12
-    },
-    {
-      "nome": "fabi",
-      "carne": "Alcatra",
-      "pao": "Italiano Branco",
-      "opcionais": [
-        "Bacon",
-        "Cheddar"
-      ],
-      "status": "Solicitado",
-      "id": 13
-    },
-    {
-      "nome": "felipe",
-      "carne": "Picanha",
-      "pao": "Integral",
-      "opcionais": [
-        "Cheddar",
-        "Salame"
-      ],
-      "status": "Solicitado",
-      "id": 14
     }
   ]
 }

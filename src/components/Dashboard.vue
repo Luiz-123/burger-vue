@@ -1,5 +1,6 @@
 <template>
     <div id="burger-table">
+        <Message :msg="msg" v-show="msg" />
         <div>
             <div id="burger-table-heading">
                 <div class="order-id">#</div>
@@ -27,10 +28,12 @@
                     </ul>
                 </div>
                 <div>
-                    <select name="status" class="status">
-                        <option value="">Selecione</option>
+                    <select name="status" class="status" @change="updatedBurger($event, burger.id)">                        
+                        <option v-for="s in status" :key="s.id" :value="s.tipo" :selected="burger.status == s.tipo">
+                            {{ s.tipo }}
+                        </option>
                     </select>
-                    <button class="delete-btn">Cancelar</button>
+                    <button class="delete-btn" @click="deleteBurger(burger.id)">Cancelar</button>
                 </div>
             </div>
             
@@ -39,14 +42,20 @@
 </template>
 
 <script>
+import Message from './Message.vue'
+
     export default {
         name:"Dashboard",
         data() {
             return {
                 burgers: null,
                 burger_id: null,
-                status: []
+                status: [],
+                msg: null
             }
+        },
+        components: {
+            Message
         },
         methods: {
             async getPedidos() {
@@ -55,6 +64,44 @@
                 this.burgers = data;
 
                 //Resgatar os status
+                this.getStatus();
+            },
+            async getStatus() {
+                const req = await fetch("http://localhost:3000/status");
+                const data = await req.json();
+                this.status = data;
+            },
+            async deleteBurger(id) {
+                const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+                    method: "DELETE"
+                });
+                const res = await req.json();
+
+                //Colocar uma mensagem de sistema
+                this.msg = `Pedido cancelado com sucesso!`;
+
+                //Limpar a mensagem de sistema
+                setTimeout(() => this.msg = "", 3000);
+
+                this.getPedidos();
+            },
+            async updatedBurger(event, id) {
+                const option = event.target.value;
+                const dataJson = JSON.stringify({ status:option });
+                const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+                    method: "PATCH",
+                    headers: {"Content-Type":"Application/json"},
+                    body: dataJson
+                });
+                const res = await req.json();
+
+                //Colocar uma mensagem de sistema
+                this.msg = `Pedido Nº ${res.id}: Atualizado para ${res.status}.`;
+
+                //Limpar a mensagem de sistema
+                setTimeout(() => this.msg = "", 3000);
+                
+                //console.log(res);
             }
         },
         mounted() {
@@ -97,27 +144,29 @@
         padding: 9px 1px;
         margin-right: 5px;
         background-color: transparent;
-        color: rgb(253, 253, 246);
-        border: 2px solid rgb(253, 253, 246);
+        color: rgb(156, 167, 15); /* rgb(143, 101, 47); rgb(179, 125, 55); */
+        border: 2px solid rgb(178, 189, 25); /*rgb(109, 109, 108); rgb(29, 175, 243); rgb(131, 203, 236); rgb(144, 224, 128); rgb(228, 146, 40);*/
         border-radius: 5px;
-    }
+        width: 90px;
+        cursor: pointer;
+    }    
     .delete-btn {
         background-color: transparent;
-        color: rgb(220, 233, 38);
+        color: rgb(253, 253, 246);
         font-weight: bold;
-        border: 2px solid rgb(220, 233, 38);
+        border: 2px solid rgb(253, 253, 246); /*rgb(220, 233, 38);*/
         border-radius: 5px;
         padding: 10px;
         font-size: 12px;
         margin: 0 auto;
         margin-left: 5px;
         cursor: pointer;
-        transition: .5s;               
+        transition: .4s;               
     }
     .delete-btn:hover {
         background-color: transparent;
-        color: rgb(226, 4, 4);   
+        color: rgb(226, 4, 4);
         border: 2px solid rgb(226, 4, 4);  
-        /*rgb(233, 10, 10);*/      
-    }
+        /*rgb(226, 4, 4);rgb(233, 10, 10);rgb(218, 25, 185);*/      
+    }    
 </style>
