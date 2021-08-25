@@ -29,7 +29,8 @@ import Dashboard from '../components/Dashboard.vue'
       background-position: 0 -85px;
       padding: 0px 0px;  
       background-position: center;
-      background-repeat: no-repeat;         
+      background-repeat: no-repeat;     
+      margin-bottom: 50px;
       /*filter: brightness(60%);*/
       /*opacity: 95%;*/
 

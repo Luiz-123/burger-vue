@@ -152,10 +152,10 @@ import Message from './Message.vue'
         font-weight: bold;
     }
     .submit-btn {
-        background-color: #705405; /*rgb(240, 172, 84);*/
-        color: #fff;
+        background-color: #694e03; /*rgb(240, 172, 84);*/
+        color: #f1f1f1;
         font-weight: bold;
-        border: 2px solid #705405; 
+        border: 2px solid #694e03; 
         border-radius: 5px;
         padding: 10px;
         font-size: 16px;
@@ -164,10 +164,10 @@ import Message from './Message.vue'
         transition: .2s;               
     }
     .submit-btn:hover {  
-        background-color: rgb(175, 134, 21); /*rgb(247, 184, 102);*/
-        color: #fff;
+        background-color: #413003; /*rgb(247, 184, 102);*/
+        color: #f1f1f1;
         font-weight: bold;
-        border: 2px solid rgb(175, 134, 21);                    
+        border: 2px solid #413003;                    
         /*opacity: 90%;*/
         /*transform: translateY(-1px);*/
         transition: .5s;
