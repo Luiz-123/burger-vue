@@ -164,10 +164,10 @@ import Message from './Message.vue'
         transition: .2s;               
     }
     .submit-btn:hover {  
-        background-color: #463609; /*rgb(247, 184, 102);*/
-        color: #f1f1f1;
+        background-color: #574002; /*rgb(247, 184, 102); #55420e;*/
+        color: #ddd9d9;
         font-weight: bold;
-        border: 2px solid #463609;                    
+        border: 2px solid #574002;                    
         /*opacity: 90%;*/
         /*transform: translateY(-1px);*/
         transition: .5s;
