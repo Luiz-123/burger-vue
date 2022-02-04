@@ -112,7 +112,7 @@ import Message from './Message.vue'
 
 <style scoped>
     #burger-table {
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
     }
     #burger-table-heading,
